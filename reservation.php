@@ -13,11 +13,11 @@
         <section>
             <h1>Maak uw reservering</h1>
             <form action="" method="post">
-                Voornaam: <br><input type="text" id="first_name" name="first_name" value="" ><br>
-                Achternaam: <br><input type="text" id="last_name" name="last_name" value="" ><br>
-                Tel: <br><input type="number" id="phone_number" name="phone_number" value="" ><br>
-                Email: <br><input type="text" id="email" name="email" value="" ><br>
-                Opmerkingen: <br><textarea rows="4" cols="50" name="comments">
+                <h3>Voornaam:</h3><input type="text" id="first_name" name="first_name" value="<?= $_POST['first_name'] ?? ''?>"/><br>
+                <h3>Achternaam:</h3><input type="text" id="last_name" name="last_name" value="<?= $_POST['last_name'] ?? ''?>"/><br>
+                <h3>Tel:</h3><input id="phone_number" type="tel" name="phone_number" pattern="[06][0-9]{9}" value="<?= $_POST['phone_number'] ?? ''?>"/><br>
+                <h3>Email:</h3><input type="text" id="email" name="email" value="<?= $_POST['email'] ?? ''?>"/><br>
+                <h3>Opmerking</h3><textarea rows="4" cols="50" name="comments">
 Plaats uw opmerking...</textarea>
                 <input type="submit" name="submit" value="send">
             </form>
