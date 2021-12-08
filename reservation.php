@@ -1,3 +1,8 @@
+<?php
+require_once 'includes/database.php';
+require_once 'includes/initialize.php';
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
