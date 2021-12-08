@@ -4,7 +4,7 @@ require_once 'includes/initialize.php';
 
 if(isset($_POST['submit']))
 {
-    $sql = "INSERT INTO reservations (first_name,last_name,phone_number,mail,date_time,comment,total_guests)
+    $sql = "INSERT INTO reservations (first_name,last_name,phone_number,mail,date,comment,total_guests)
      VALUES ('$firstname','$lastname','$phonenumber','$mail','$date','$comment','$guests')";
     if (mysqli_query($db, $sql)) {
         echo "Reserving is geplaatst!";

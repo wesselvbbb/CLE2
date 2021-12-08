@@ -22,10 +22,9 @@ require_once 'includes/initialize.php';
                 <h3>Achternaam:</h3><input type="text" id="last_name" name="last_name" value="<?= $_POST['last_name'] ?? ''?>"/><br>
                 <h3>Tel:</h3><input id="phone_number" type="tel" name="phone_number" pattern="[06][0-9]{9}" value="<?= $_POST['phone_number'] ?? ''?>"/><br>
                 <h3>Email:</h3><input type="text" id="email" name="mail" value="<?= $_POST['mail'] ?? ''?>"/><br>
-                <h3>Datum:</h3><input type="datetime-local" id="date" name="date_time" value="<?= $_POST['date_time'] ?? ''?>"/><br>
+                <h3>Datum:</h3><input type="datetime-local" id="date" name="date_time" value="<?= $_POST['date'] ?? ''?>"/><br>
                 <h3>Aantal personen:</h3><input type="number" id="total_guests" name="total_guests" value="<?= $_POST['total_guests'] ?? ''?>"/><br>
-                <h3>Opmerking</h3><textarea rows="4" cols="50" name="comment" value="<?= $_POST['comment'] ?? ''?>"/>
-Plaats uw opmerking...</textarea>
+                <h3>Opmerking</h3><textarea rows="4" cols="50" name="comment" placeholder="Plaats uw opmerking" value="<?= $_POST['comment'] ?? ''?>"/></textarea>
                 <input type="submit" name="submit" value="send">
             </form>
         </section>
