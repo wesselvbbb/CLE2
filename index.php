@@ -1,5 +1,21 @@
 <?php
+require_once 'includes/initialize.php';
 
+/** @var $db */
+require_once "includes/database.php";
+
+//Get the result set from the database with a SQL query
+$query = "SELECT * FROM reservations";
+$result = mysqli_query($db, $query);
+
+//Loop through the result to create a custom array
+$reservations = [];
+while ($row = mysqli_fetch_assoc($result)) {
+    $reservations[] = $row;
+}
+
+//Close connection
+mysqli_close($db);
 ?>
 <!doctype html>
 <html lang="en">
@@ -13,7 +29,40 @@
     <title>Home</title>
 </head>
 <body>
-
+<h1>Overzicht reserveringen:</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Voornaam</th>
+        <th>Achternaam</th>
+        <th>Tel:</th>
+        <th>Mail</th>
+        <th>Datum</th>
+        <th>Aantal personen</th>
+        <th>Opmerking</th>
+        <th colspan="2"></th>
+    </tr>
+    </thead>
+    <tfoot>
+    <tr>
+        <td colspan="9">Reserveringen</td>
+    </tr>
+    </tfoot>
+    <tbody>
+    <?php foreach ($reservations as $reservation) { ?>
+        <tr>
+            <td><?= $reservation['first_name'] ?></td>
+            <td><?= $reservation['last_name'] ?></td>
+            <td><?= $reservation['phone_number'] ?></td>
+            <td><?= $reservation['mail'] ?></td>
+            <td><?= $reservation['date'] ?></td>
+            <td><?= $reservation['total_guests'] ?></td>
+            <td><?= $reservation['comment'] ?></td>
+<!--            <td><a href="detail.php?id=--><?//= $reservation['id'] ?><!--">Details</a></td>-->
+        </tr>
+    <?php } ?>
+    </tbody>
+</table>
 <button><a href="reservation.php">Reserveren</button>
 </body>
 </html>

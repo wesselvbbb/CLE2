@@ -1,4 +1,7 @@
 <?php
+require_once 'includes/database.php';
+
+
 if (isset($_POST['submit'])){
     $firstname = $_POST['first_name'];
     $lastname = $_POST['last_name'];
