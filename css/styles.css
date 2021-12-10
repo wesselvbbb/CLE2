@@ -1,0 +1,19 @@
+.overview{
+    border: solid black 1px;
+    padding: 50px;
+    text-align: center;
+    width: 60%;
+    margin: auto;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: lightgrey;
+}
+tfoot td {
+    text-align: center;
+    font-weight: bold;
+}
+
+td {
+    padding: 0 10px;
+}
