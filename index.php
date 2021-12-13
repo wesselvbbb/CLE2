@@ -30,6 +30,11 @@ mysqli_close($db);
 </head>
 <body>
 <h1>Overzicht reserveringen:</h1>
+<form action="" method="post">
+    <label>Zoeken</label>
+    <input type="text" name="search" placeholder="zoeken...">
+    <input type="submit" name="submit">
+</form>
 <table>
     <thead>
     <tr>
@@ -58,7 +63,9 @@ mysqli_close($db);
             <td><?= $reservation['date'] ?></td>
             <td><?= $reservation['total_guests'] ?></td>
             <td><?= $reservation['comment'] ?></td>
-<!--            <td><a href="detail.php?id=--><?//= $reservation['id'] ?><!--">Details</a></td>-->
+            <td><a href="delete.php">Edit</a> </td>
+            <td><a href="edit.php">Delete</a></td>
+            <td><a href="view.php?id=<?= $reservation['id'] ?>">View</a></td>
         </tr>
     <?php } ?>
     </tbody>

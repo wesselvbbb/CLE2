@@ -5,9 +5,13 @@
     width: 60%;
     margin: auto;
 }
+body{
+    padding: 20px;
+}
 
 tbody tr:nth-child(odd) {
-    background-color: lightgrey;
+    background-color: lightseagreen;
+    width: 100%;
 }
 tfoot td {
     text-align: center;
