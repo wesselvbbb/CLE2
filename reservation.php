@@ -1,6 +1,8 @@
 <?php
+/** @var mysqli $db  */
 require_once 'includes/database.php';
 require_once 'includes/initialize.php';
+require_once 'includes/validation.php';
 ?>
 
 <!doctype html>
@@ -18,7 +20,8 @@ require_once 'includes/initialize.php';
         <section>
             <h1>Maak uw reservering</h1>
             <form action="insert.php" method="post">
-                <h3>Voornaam:</h3><input type="text" id="first_name" name="first_name" value="<?= $_POST['first_name'] ?? ''?>"/><br>
+                <h3>Voornaam:</h3><input type="text" id="first_name" name="first_name" value="<?= isset($firstname) ? htmlentities($firstname) : '' ?>"/>
+                <span class="errors"><?= $errors['first_name'] ?? '' ?></span><br>
                 <h3>Achternaam:</h3><input type="text" id="last_name" name="last_name" value="<?= $_POST['last_name'] ?? ''?>"/><br>
                 <h3>Tel:</h3><input id="phone_number" type="tel" name="phone_number" pattern="[06][0-9]{9}" value="<?= $_POST['phone_number'] ?? ''?>"/><br>
                 <h3>Email:</h3><input type="text" id="email" name="mail" value="<?= $_POST['mail'] ?? ''?>"/><br>

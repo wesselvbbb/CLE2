@@ -63,7 +63,7 @@ mysqli_close($db);
             <td><?= $reservation['date'] ?></td>
             <td><?= $reservation['total_guests'] ?></td>
             <td><?= $reservation['comment'] ?></td>
-            <td><a href="edit.php">Edit</a> </td>
+            <td><a href="edit.php?id=<?= $reservation['id']?>">Edit</a> </td>
             <td><a href="delete.php?id=<?= $reservation['id'] ?>">Delete</a></td>
             <td><a href="view.php?id=<?= $reservation['id'] ?>">View</a></td>
         </tr>
@@ -71,6 +71,7 @@ mysqli_close($db);
     </tbody>
 </table>
 <button><a href="reservation.php">Reserveren</button>
+<button><a href="create.php">Create</button>
 </body>
 </html>
 

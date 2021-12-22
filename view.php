@@ -1,8 +1,38 @@
 <?php
-require_once 'includes/database.php';
 require_once 'includes/initialize.php';
 
+/** @var mysqli $db */
+require_once 'includes/database.php';
 
+// redirect when uri does not contain a id
+if(!isset($_GET['id']) || $_GET['id'] == '') {
+    // redirect to index.php
+    header('Location: index.php');
+    exit;
+}
+
+//Require database in this file
+require_once "includes/database.php";
+
+//Retrieve the GET parameter from the 'Super global'
+$reservationId = mysqli_escape_string($db, $_GET['id']);
+
+//Get the record from the database result
+$query = "SELECT * FROM reservations WHERE id = '$reservationId'";
+$result = mysqli_query($db, $query)
+or die ('Error: ' . $query );
+
+if(mysqli_num_rows($result) != 1)
+{
+    // redirect when db returns no result
+    header('Location: index.php');
+    exit;
+}
+
+$album = mysqli_fetch_assoc($result);
+
+//Close connection
+mysqli_close($db);
 ?>
 <!DOCTYPE html>
 <html>
