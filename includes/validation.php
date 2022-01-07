@@ -1,4 +1,5 @@
 <?php
+require_once 'includes/initialize.php';
 
 //Check if data is valid & generate error if not so
 $errors = [];

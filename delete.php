@@ -69,6 +69,7 @@ if (isset($_POST['submit'])) {
     </p>
     <input type="hidden" name="id" value="<?= $reservation['id'] ?>"/>
     <input type="submit" name="submit" value="Verwijderen"/>
+    <button><a href="index.php">Terug</button>
 </form>
 </body>
 </html>
