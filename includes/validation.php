@@ -16,10 +16,6 @@ if ($mail == "") {
     $errors['mail'] = 'Vul hier uw email in.';
 }
 
-if (!is_numeric($date) || strlen($date) != 4) {
-    $errors['date'] = 'Voer een juiste datum in';
-}
-
 // this error message wil overwrite the previous error when year is empty
 if ($date == "") {
     $errors['date'] = 'Datum mag niet leeg zijn.';

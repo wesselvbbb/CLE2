@@ -58,32 +58,32 @@ if (isset($_POST['submit'])) {
     <div class="data-field">
         <label for="last_name">Achternaam</label>
         <input id="last_name" type="text" name="last_name" value="<?= isset($lastname) ? htmlentities($lastname) : '' ?>"/>
-        <span class="errors"><?= isset($errors['last_name']) ? $errors['last_name'] : '' ?></span>
+        <span class="errors"><?= $errors['last_name'] ?? '' ?></span>
     </div>
     <div class="data-field">
         <label for="phone_number">Telefoonnummer</label>
         <input id="phone_number" type="text" name="phone_number" value="<?= isset($phonenumber) ? htmlentities($phonenumber) : '' ?>"/>
-        <span class="errors"><?= isset($errors['phone_number']) ? $errors['phone_number'] : '' ?></span>
+        <span class="errors"><?= $errors['phone_number'] ?? '' ?></span>
     </div>
     <div class="data-field">
         <label for="mail">Email</label>
         <input id="mail" type="text" name="mail" value="<?= isset($mail) ? htmlentities($mail) : '' ?>"/>
-        <span class="errors"><?= isset($errors['mail']) ? $errors['mail'] : '' ?></span>
+        <span class="errors"><?= $errors['mail'] ?? '' ?></span>
     </div>
     <div class="data-field">
         <label for="date">Datum</label>
         <input id="date" type="date" name="date" value="<?= isset($date) ? htmlentities($date) : '' ?>"/>
-        <span class="errors"><?= isset($errors['date']) ? $errors['date'] : '' ?></span>
+        <span class="errors"><?= $errors['date'] ?? '' ?></span>
     </div>
     <div class="data-field">
         <label for="date">Guests</label>
         <input id="date" type="number" name="date" value="<?= isset($date) ? htmlentities($date) : '' ?>"/>
-        <span class="errors"><?= isset($errors['date']) ? $errors['date'] : '' ?></span>
+        <span class="errors"><?= $errors['date'] ?? '' ?></span>
     </div>
     <div class="data-field">
         <label for="comments">Opmerking</label>
-        <input id="comments" type="text" name="comment" placeholder="Plaats uw opmerking" value="<?= isset($comment) ? htmlentities($comment) : '' ?>"/>
-        <span class="errors"><?= isset($errors['comment']) ? $errors['comment'] : '' ?></span>
+        <textarea rows="4" cols="50" name="comment" placeholder="Plaats uw opmerking" value="<?= $_POST['comment'] ?? ''?>"/></textarea>
+        <span class="errors"><?= $errors['comment'] ?? '' ?></span>
     </div>
     <div class="data-submit">
         <input type="submit" name="submit" value="Opslaan"/>

@@ -2,7 +2,6 @@
 /** @var mysqli $db */
 
 require_once "includes/database.php";
-require_once 'includes/initialize.php';
 
 if (isset($_POST['submit'])) {
     // DELETE IMAGE

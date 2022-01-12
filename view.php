@@ -1,11 +1,21 @@
 <?php
 require_once 'includes/initialize.php';
 
+//if (isset($_POST['submit'])){
+//    $firstname = $album['first_name'];
+//    $lastname = $_POST['last_name'];
+//    $phonenumber = $_POST['phone_number'];
+//    $mail = $_POST['mail'];
+//    $date = $_POST['date'];
+//    $guests = $_POST['total_guests'];
+//    $comment = $_POST['comment'];
+//}
+
 /** @var mysqli $db */
-require_once 'includes/database.php';
+
 
 // redirect when uri does not contain a id
-if(!isset($_GET['id']) || $_GET['id'] == '') {
+if (!isset($_GET['id']) || $_GET['id'] == '') {
     // redirect to index.php
     header('Location: index.php');
     exit;
@@ -20,17 +30,22 @@ $reservationId = mysqli_escape_string($db, $_GET['id']);
 //Get the record from the database result
 $query = "SELECT * FROM reservations WHERE id = '$reservationId'";
 $result = mysqli_query($db, $query)
-or die ('Error: ' . $query );
+or die ('Error: ' . $query);
 
-if(mysqli_num_rows($result) != 1)
-{
+if (mysqli_num_rows($result) != 1) {
     // redirect when db returns no result
     header('Location: index.php');
     exit;
 }
 
-$album = mysqli_fetch_assoc($result);
-
+$reservation = mysqli_fetch_assoc($result);
+$firstname = $reservation['first_name'];
+$lastname = $reservation['last_name'];
+$phonenumber = $reservation['phone_number'];
+$mail = $reservation['mail'];
+$date = $reservation['date'];
+$guests = $reservation['total_guests'];
+$comment = $reservation['comment'];
 //Close connection
 mysqli_close($db);
 ?>
@@ -50,12 +65,12 @@ mysqli_close($db);
 <body>
 <div class="overview">
     <h2>Overzicht van reservering:</h2>
-    <p>Naam: <?= $firstname .' '. $lastname ?></p>
-    <p>Telefoonnummer: <?= $phonenumber?></p>
-    <p>Email: <?= $mail?></p>
-    <p>Datum: <?= $date?></p>
-    <p>Aantal personen: <?= $guests?></p>
-    <p>Opmerking: <?= $comment?></p>
+    <p>Naam:<?= $firstname . ' ' . $lastname ?></p>
+    <p>Telefoonnummer: <?= $phonenumber ?></p>
+    <p>Email: <?= $mail ?></p>
+    <p>Datum: <?= $date ?></p>
+    <p>Aantal personen: <?= $guests ?></p>
+    <p>Opmerking: <?= $comment ?></p>
     <a href="index.php">Home</a>
 </div>
 </body>

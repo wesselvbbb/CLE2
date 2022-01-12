@@ -29,49 +29,43 @@ mysqli_close($db);
     <title>Home</title>
 </head>
 <body>
-<h1>Overzicht reserveringen:</h1>
-<form action="" method="post">
-    <label>Zoeken</label>
-    <input type="text" name="search" placeholder="zoeken...">
-    <input type="submit" name="submit">
-</form>
-<table>
-    <thead>
-    <tr>
-        <th>Voornaam</th>
-        <th>Achternaam</th>
-        <th>Tel:</th>
-        <th>Mail</th>
-        <th>Datum</th>
-        <th>Aantal personen</th>
-        <th>Opmerking</th>
-        <th colspan="2"></th>
-    </tr>
-    </thead>
-    <tfoot>
-    <tr>
-        <td colspan="9">Reserveringen</td>
-    </tr>
-    </tfoot>
-    <tbody>
-    <?php foreach ($reservations as $reservation) { ?>
+<div class="banner">
+    <h1>Overzicht reserveringen:</h1>
+</div>
+<div class="overview">
+    <table>
+        <thead>
         <tr>
-            <td><?= $reservation['first_name'] ?></td>
-            <td><?= $reservation['last_name'] ?></td>
-            <td><?= $reservation['phone_number'] ?></td>
-            <td><?= $reservation['mail'] ?></td>
-            <td><?= $reservation['date'] ?></td>
-            <td><?= $reservation['total_guests'] ?></td>
-            <td><?= $reservation['comment'] ?></td>
-            <td><a href="edit.php?id=<?= $reservation['id']?>">Edit</a> </td>
-            <td><a href="delete.php?id=<?= $reservation['id'] ?>">Delete</a></td>
-            <td><a href="view.php?id=<?= $reservation['id'] ?>">View</a></td>
+            <th>Voornaam</th>
+            <th>Achternaam</th>
+            <th>Tel:</th>
+            <th>Mail</th>
+            <th>Datum</th>
+            <th>Aantal personen</th>
+            <th>Opmerking</th>
         </tr>
-    <?php } ?>
-    </tbody>
-</table>
-<button><a href="reservation.php">Reserveren</button>
-<button><a href="create.php">Create</button>
+        </thead>
+        <tfoot>
+        </tfoot>
+        <tbody>
+        <?php foreach ($reservations as $reservation) { ?>
+            <tr>
+                <td><?= $reservation['first_name'] ?></td>
+                <td><?= $reservation['last_name'] ?></td>
+                <td><?= $reservation['phone_number'] ?></td>
+                <td><?= $reservation['mail'] ?></td>
+                <td><?= $reservation['date'] ?></td>
+                <td id="guestsfield"><?= $reservation['total_guests'] ?></td>
+                <td id="commentfield"><?= $reservation['comment'] ?></td>
+                <td><a href="edit.php?id=<?= $reservation['id'] ?>">Edit</a></td>
+                <td><a href="delete.php?id=<?= $reservation['id'] ?>">Delete</a></td>
+                <td><a href="view.php?id=<?= $reservation['id'] ?>">View</a></td>
+            </tr>
+        <?php } ?>
+        </tbody>
+    </table>
+    <button><a href="reservation.php">Reserveren</button>
+</div>
 </body>
 </html>
 
