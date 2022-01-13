@@ -29,9 +29,10 @@ mysqli_close($db);
     <title>Home</title>
 </head>
 <body>
-<div class="banner">
+<header>
     <h1>Overzicht reserveringen:</h1>
-</div>
+</header>
+<br>
 <div class="overview">
     <table>
         <thead>
