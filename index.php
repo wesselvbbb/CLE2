@@ -29,20 +29,29 @@ mysqli_close($db);
     <title>Home</title>
 </head>
 <body>
+<div class="sticky">
+    <nav>
+        <div><a href="#">Home</a></div>
+        <div><a href="#">Overzicht</a></div>
+        <div><a href="#">Reserveren</a></div>
+        <div><a href="#">Geschiedenis</a></div>
+    </nav>
+</div>
 <header>
     <h1>Overzicht reserveringen:</h1>
 </header>
 <br>
+<section>
 <div class="overview">
     <table>
         <thead>
         <tr>
             <th>Voornaam</th>
             <th>Achternaam</th>
-            <th>Tel:</th>
+            <th>Tel</th>
             <th>Mail</th>
             <th>Datum</th>
-            <th>Time</th>
+            <th>Tijd</th>
             <th>Aantal personen</th>
             <th>Opmerking</th>
         </tr>
@@ -67,8 +76,10 @@ mysqli_close($db);
         <?php } ?>
         </tbody>
     </table>
-    <button><a href="reservation.php">Reserveren</button>
+    <br>
+        <button id="reservation_button"><a href="reservation.php">Reserveren</button>
 </div>
+</section>
 </body>
 </html>
 

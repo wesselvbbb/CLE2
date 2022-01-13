@@ -55,7 +55,7 @@ if (isset($_POST['submit'])) {
 <?php if (isset($errors['db'])) { ?>
     <div><span class="errors"><?= $errors['db']; ?></span></div>
 <?php } ?>
-    <section>
+    <section id="create">
         <h1>Maak uw reservering</h1>
         <form action="" method="post">
             <label for="first_name">Voornaam:</label>
@@ -83,7 +83,7 @@ if (isset($_POST['submit'])) {
 <!--                    <option value="17:00">21:00</option>-->
 <!--                </select>-->
             <label for="reservation_time">Tijd:</label>
-            <input type="reservation_time" id="reservation_time" name="reservation_time" value="<?= $_POST['reservation_time'] ?? ''?>" />
+            <input type="text" id="reservation_time" name="reservation_time" value="<?= $_POST['reservation_time'] ?? ''?>" />
             <span class="errors"><?= $errors['reservation_time'] ?? '' ?></span><br>
             <label for="total_guests">Aantal personen:</label>
             <input type="number" id="total_guests" name="total_guests" value="<?= $_POST['total_guests'] ?? ''?>"  />
@@ -92,7 +92,8 @@ if (isset($_POST['submit'])) {
             <textarea rows="4" cols="50" name="comment" id="comment" placeholder="Plaats uw opmerking" value="<?= $_POST['comment'] ?? ''?>"/></textarea>
             <input type="submit" name="submit" value="send">
         </form>
+        <button id="reservation_button"><a href="index.php">Home</button>
     </section>
-    <button><a href="index.php">Home</button>
+
 </body>
 </html>

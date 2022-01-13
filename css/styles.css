@@ -1,13 +1,63 @@
-.overview{
-    border: solid black 1px;
+html {
+    scroll-behavior: smooth;
+}
+
+nav {
+    background-color: #003F2F;
+    color: black;
+    display: flex;
+    justify-content: space-evenly;
+    height: 6vh;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.6em;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav div:hover,
+nav div.selected {
+    display: block;
+}
+
+nav div:hover a {
+    color: #B98004;
+}
+
+section#overview {
     padding: 50px;
     text-align: center;
     width: 50%;
     margin: auto;
 }
-body{
 
+section#create {
+    padding: 50px;
+    text-align: center;
+    width: 50%;
+    margin: auto;
 }
+
+/*Form styling*/
+input[type=text], [type=tel],[type=number] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+
+body{
+    background-color: rgb(245, 245, 245);
+}
+
 table{
     width: 100%;
 }
@@ -39,23 +89,53 @@ td#commentfield {
     text-overflow: ellipsis;
 }
 
-.banner{
-    text-align: center;
-    width: 60%;
-    margin: auto;
-}
-
 .errors{
     color: red;
 }
 
 header {
-    height: 30vh;
+    background-color: #003F2F;
+    height: 200px;
+    color: white;
     width: 100%;
-    background-color: rgb(83, 98, 113);
-    color: rgb(255, 255, 255);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     text-align: center;
+}
+section{
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    margin: 20px auto;
+    color: black;
+    font-size: 1.1em;
+    max-width: 75%;
+    font-family: "Raleway", sans-serif;
+    border-radius: 20px;
+    border-top: 3px solid #B98004;
+}
+
+button#reservation_button{
+    background-color: #B98004;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+button a{
+    color: white;
+    text-decoration: none;
+}
+
+button#reservation_button:hover {
+    background-color: #8F6201;
+    color: white
+}
+
+button#reservation_button:hover a {
+    background-color: #8F6201;
+    color: white
+
 }

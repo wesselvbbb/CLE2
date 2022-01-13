@@ -64,9 +64,9 @@ mysqli_close($db);
 </head>
 
 <body>
-<div class="overview">
+<section id="overview">
     <h2>Overzicht van reservering:</h2>
-    <p>Naam:<?= $firstname . ' ' . $lastname ?></p>
+    <p>Naam: <?= $firstname . ' ' . $lastname ?></p>
     <p>Telefoonnummer: <?= $phonenumber ?></p>
     <p>Email: <?= $mail ?></p>
     <p>Datum: <?= $date ?></p>
@@ -74,7 +74,7 @@ mysqli_close($db);
     <p>Aantal personen: <?= $guests ?></p>
     <p>Opmerking: <?= $comment ?></p>
     <a href="index.php">Home</a>
-</div>
+</section>
 </body>
 
 </html>
