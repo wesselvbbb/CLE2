@@ -42,6 +42,7 @@ mysqli_close($db);
             <th>Tel:</th>
             <th>Mail</th>
             <th>Datum</th>
+            <th>Time</th>
             <th>Aantal personen</th>
             <th>Opmerking</th>
         </tr>
@@ -56,6 +57,7 @@ mysqli_close($db);
                 <td><?= $reservation['phone_number'] ?></td>
                 <td><?= $reservation['mail'] ?></td>
                 <td><?= $reservation['date'] ?></td>
+                <td><?= $reservation['reservation_time'] ?></td>
                 <td id="guestsfield"><?= $reservation['total_guests'] ?></td>
                 <td id="commentfield"><?= $reservation['comment'] ?></td>
                 <td><a href="edit.php?id=<?= $reservation['id'] ?>">Edit</a></td>

@@ -20,6 +20,10 @@ if ($mail == "") {
 if ($date == "") {
     $errors['date'] = 'Datum mag niet leeg zijn.';
 }
+if ($reservation_time == "") {
+    $errors['reservation_time'] = 'Kies een tijd.';
+}
+
 if (!is_numeric($guests)) {
     $errors['total_guests'] = 'Voer een getal in.';
 }

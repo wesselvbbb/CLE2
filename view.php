@@ -44,6 +44,7 @@ $lastname = $reservation['last_name'];
 $phonenumber = $reservation['phone_number'];
 $mail = $reservation['mail'];
 $date = $reservation['date'];
+$reservation_time = $reservation['reservation_time'];
 $guests = $reservation['total_guests'];
 $comment = $reservation['comment'];
 //Close connection
@@ -69,6 +70,7 @@ mysqli_close($db);
     <p>Telefoonnummer: <?= $phonenumber ?></p>
     <p>Email: <?= $mail ?></p>
     <p>Datum: <?= $date ?></p>
+    <p>Tijd: <?= $reservation_time ?></p>
     <p>Aantal personen: <?= $guests ?></p>
     <p>Opmerking: <?= $comment ?></p>
     <a href="index.php">Home</a>

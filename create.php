@@ -13,6 +13,7 @@ if (isset($_POST['submit'])) {
     $phonenumber  = mysqli_escape_string($db, $_POST['phone_number']);
     $mail   = mysqli_escape_string($db, $_POST['mail']);
     $date = mysqli_escape_string($db, $_POST['date']);
+    $time = mysqli_escape_string($db, $_POST['time']);
     $guests = mysqli_escape_string($db, $_POST['total_guests']);
     $comment = mysqli_escape_string($db, $_POST['comment']);
 
@@ -20,8 +21,8 @@ if (isset($_POST['submit'])) {
     require_once "includes/validation.php";
 
         //Save the record to the database
-        $query = "INSERT INTO reservations (first_name,last_name,phone_number,mail,date,comment,total_guests)
-                VALUES ('$firstname','$lastname','$phonenumber','$mail','$date','$comment','$guests')";
+        $query = "INSERT INTO reservations (first_name,last_name,phone_number,mail,date,comment,total_guests, time )
+                VALUES ('$firstname','$lastname','$phonenumber','$mail','$date','$comment','$guests','$time')";
         $result = mysqli_query($db, $query) or die('Error: '.mysqli_error($db). ' with query ' . $query);
 
         if ($result) {

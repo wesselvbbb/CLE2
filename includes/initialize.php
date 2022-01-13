@@ -7,6 +7,7 @@ if (isset($_POST['submit'])){
     $phonenumber = $_POST['phone_number'];
     $mail = $_POST['mail'];
     $date = $_POST['date'];
+    $reservation_time = $_POST['reservation_time'];
     $guests = $_POST['total_guests'];
     $comment = $_POST['comment'];
 }
