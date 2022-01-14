@@ -59,16 +59,16 @@ if (isset($_POST['submit'])) {
         <h1>Maak uw reservering</h1>
         <form action="" method="post">
             <label for="first_name">Voornaam:</label>
-            <input type="text" id="first_name" name="first_name" value="<?= isset($firstname) ? htmlentities($firstname) : '' ?>"/>
+            <input type="text" id="first_name" name="first_name" placeholder="Voornaam..." value="<?= isset($firstname) ? htmlentities($firstname) : '' ?>"/>
             <span class="errors"><?= $errors['first_name'] ?? '' ?></span><br>
             <label for="last_name">Achternaam:</label>
-            <input type="text" id="last_name" name="last_name" value="<?= $_POST['last_name'] ?? ''?>" />
+            <input type="text" id="last_name" name="last_name" placeholder="Achternaam..." value="<?= $_POST['last_name'] ?? ''?>" />
             <span class="errors"><?= $errors['last_name'] ?? '' ?></span><br>
             <label for="phone_number">Tel:</label>
-            <input id="phone_number" type="tel" name="phone_number" pattern="[06][0-9]{9}" value="<?= $_POST['phone_number'] ?? ''?>"/>
+            <input id="phone_number" type="tel" name="phone_number" placeholder="Telefoon..." pattern="[06][0-9]{9}" value="<?= $_POST['phone_number'] ?? ''?>"/>
             <span class="errors"><?= $errors['phone_number'] ?? '' ?></span><br>
             <label for="email">Email:</label>
-            <input type="text" id="email" name="mail" value="<?= $_POST['mail'] ?? ''?>" />
+            <input type="text" id="email" name="mail" placeholder="Email..." value="<?= $_POST['mail'] ?? ''?>" />
             <span class="errors"><?= $errors['mail'] ?? '' ?></span><br>
             <label for="date">Datum:</label>
             <input type="date" id="date" name="date" value="<?= $_POST['date'] ?? ''?>" />
@@ -83,14 +83,14 @@ if (isset($_POST['submit'])) {
 <!--                    <option value="17:00">21:00</option>-->
 <!--                </select>-->
             <label for="reservation_time">Tijd:</label>
-            <input type="text" id="reservation_time" name="reservation_time" value="<?= $_POST['reservation_time'] ?? ''?>" />
+            <input type="text" id="reservation_time" name="reservation_time" placeholder="Tijd..." value="<?= $_POST['reservation_time'] ?? ''?>" />
             <span class="errors"><?= $errors['reservation_time'] ?? '' ?></span><br>
             <label for="total_guests">Aantal personen:</label>
-            <input type="number" id="total_guests" name="total_guests" value="<?= $_POST['total_guests'] ?? ''?>"  />
+            <input type="number" id="total_guests" name="total_guests" placeholder="Aantal personen..." value="<?= $_POST['total_guests'] ?? ''?>"  />
             <span class="errors"><?= $errors['total_guests'] ?? '' ?></span><br>
             <label for="comment">Opmerking:</label>
-            <textarea rows="4" cols="50" name="comment" id="comment" placeholder="Plaats uw opmerking" value="<?= $_POST['comment'] ?? ''?>"/></textarea>
-            <input type="submit" name="submit" value="send">
+            <textarea rows="4" cols="50" name="comment" id="comment" placeholder="Plaats uw opmerking" value="<?= $_POST['comment'] ?? ''?>"/></textarea><br>
+            <input type="submit" id="send" name="submit" value="send">
         </form>
         <button id="reservation_button"><a href="index.php">Home</button>
     </section>

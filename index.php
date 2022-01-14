@@ -77,7 +77,7 @@ mysqli_close($db);
         </tbody>
     </table>
     <br>
-        <button id="reservation_button"><a href="reservation.php">Reserveren</button>
+    <button id="reservation_button"><a href="reservation.php">Reserveren</button></a>
 </div>
 </section>
 </body>

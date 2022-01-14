@@ -61,14 +61,16 @@ if (isset($_POST['submit'])) {
     <title>Delete - <?= $reservation['mail'] ?></title>
 </head>
 <body>
+<section>
 <h2>Delete - <?= $reservation['mail'] ?></h2>
 <form action="" method="post">
     <p>
         Weet u zeker dat u de reservatie van "<?= $reservation['mail'] ?>" op: "<?= $reservation['date']?>" wilt verwijderen?
     </p>
     <input type="hidden" name="id" value="<?= $reservation['id'] ?>"/>
-    <input type="submit" name="submit" value="Verwijderen"/>
-    <button><a href="index.php">Terug</button>
+    <input type="submit" name="submit" id="delete" value="Verwijderen"/>
+    <button id="reservation_button"><a href="index.php">Terug</button>
 </form>
+</section>
 </body>
 </html>

@@ -42,6 +42,10 @@ section#create {
 }
 
 /*Form styling*/
+input, label{
+    display: block;
+}
+
 input[type=text], [type=tel],[type=number] {
     width: 50%;
     padding: 12px 20px;
@@ -53,6 +57,74 @@ input[type=text], [type=tel],[type=number] {
     text-align: left;
 }
 
+input[type=date] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+#send{
+    background-color: #B98004;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    display:      block;
+    margin-left:  auto;
+    margin-right: 10px;
+    float: left;
+    cursor: pointer;
+}
+
+#send:hover{
+    background-color: #8F6201;
+    color: white;
+    cursor: pointer;
+}
+
+#delete{
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    display:      block;
+    margin-left:  auto;
+    margin-right: 10px;
+    float: left;
+    cursor: pointer;
+    float: left;
+}
+
+#delete:hover{
+    background-color: darkred;
+    float: left;
+    cursor: pointer;
+}
+
+textarea{
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: left;
+}
 
 body{
     background-color: rgb(245, 245, 245);
@@ -122,6 +194,9 @@ button#reservation_button{
     display: inline-block;
     font-size: 16px;
     border-radius: 5px;
+    display:      block;
+    margin-left:  0;
+    margin-right: auto;
 }
 
 button a{
@@ -131,11 +206,11 @@ button a{
 
 button#reservation_button:hover {
     background-color: #8F6201;
-    color: white
+    color: white;
+    cursor: pointer;
 }
 
 button#reservation_button:hover a {
     background-color: #8F6201;
     color: white
-
 }

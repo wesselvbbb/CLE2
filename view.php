@@ -73,7 +73,7 @@ mysqli_close($db);
     <p>Tijd: <?= $reservation_time ?></p>
     <p>Aantal personen: <?= $guests ?></p>
     <p>Opmerking: <?= $comment ?></p>
-    <a href="index.php">Home</a>
+    <button id="reservation_button"><a href="index.php">Home</a></button>
 </section>
 </body>
 
