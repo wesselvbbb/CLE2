@@ -1,4 +1,12 @@
 <?php
+session_start();
+
+//May I even visit this page?
+if (!isset($_SESSION['loggedInUser'])) {
+    header("Location: login.php");
+    exit;
+}
+
 require_once 'includes/initialize.php';
 
 /** @var $db */
@@ -17,7 +25,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 //Close connection
 mysqli_close($db);
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -29,14 +37,6 @@ mysqli_close($db);
     <title>Home</title>
 </head>
 <body>
-<div class="sticky">
-    <nav>
-        <div><a href="#">Home</a></div>
-        <div><a href="#">Overzicht</a></div>
-        <div><a href="#">Reserveren</a></div>
-        <div><a href="#">Geschiedenis</a></div>
-    </nav>
-</div>
 <header>
     <h1>Overzicht reserveringen:</h1>
 </header>
@@ -79,6 +79,7 @@ mysqli_close($db);
     <br>
     <button id="reservation_button"><a href="reservation.php">Reserveren</button></a>
 </div>
+    <p><a href="logout.php">Uitloggen</a></p>
 </section>
 </body>
 </html>
