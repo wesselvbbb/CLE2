@@ -90,7 +90,7 @@ if (isset($_POST['submit'])) {
             <span class="errors"><?= $errors['total_guests'] ?? '' ?></span><br>
             <label for="comment">Opmerking:</label>
             <textarea rows="4" cols="50" name="comment" id="comment" placeholder="Plaats uw opmerking" value="<?= $_POST['comment'] ?? ''?>"/></textarea><br>
-            <input type="submit" id="send" name="submit" value="send">
+            <input type="submit" id="send" name="submit" value="Reserveren">
         </form>
         <button id="reservation_button"><a href="index.php">Home</button>
     </section>

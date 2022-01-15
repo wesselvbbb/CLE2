@@ -18,13 +18,18 @@ $email = $_SESSION['loggedInUser']['email'];
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="css/styles.css"/>
     <title>Veilige pagina</title>
 </head>
 <body>
+<header>
     <h2>Secure page</h2>
+</header>
+<section>
     <p>Dit is de beveiligde pagina. Hier mag je alleen komen als je ingelogd bent.</p>
     <p>Welkom, <?= $email ?></p>
     <p><a href="logout.php">Uitloggen</a></p>
+</section>
 </body>
 </html>
