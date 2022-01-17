@@ -7,6 +7,9 @@ if (!isset($_SESSION['loggedInUser'])) {
     exit;
 }
 
+//Get email from session
+$email = $_SESSION['loggedInUser']['email'];
+
 require_once 'includes/initialize.php';
 
 /** @var $db */
@@ -42,6 +45,7 @@ mysqli_close($db);
 </header>
 <br>
 <section>
+    <p>Welkom: <?= $email ?> </p>
 <div class="overview">
     <table>
         <thead>

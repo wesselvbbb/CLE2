@@ -44,7 +44,7 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
 </head>
 <body>
-<h1>Create album</h1>
+<h1>Maak reservering</h1>
 <?php if (isset($errors['db'])) { ?>
     <div><span class="errors"><?= $errors['db']; ?></span></div>
 <?php } ?>
