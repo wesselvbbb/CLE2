@@ -89,6 +89,9 @@ mysqli_close($db);
     <title>Bewerken</title>
 </head>
 <body>
+<header>
+    <h1>Reservering bewerken:</h1>
+</header><br>
 <section>
     <form action="" method="post">
         <label for="first_name">Voornaam:</label>
@@ -104,7 +107,7 @@ mysqli_close($db);
         <input type="text" id="mail" name="mail"
                value="<?= $mail ?>"/>
         <label for="date">Datum:</label>
-        <input type="text" id="date" name="date"
+        <input type="date" id="date" name="date"
                value="<?= $date ?>"/>
         <label for="reservation_time">Tijd:</label>
         <input type="text" id="reservation_time" name="reservation_time"

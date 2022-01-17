@@ -64,15 +64,27 @@ mysqli_close($db);
 </head>
 
 <body>
+<header>
+    <h1>Reservering maken:</h1>
+</header><br>
 <section id="overview">
     <h2>Overzicht van reservering:</h2>
-    <p>Naam: <?= $firstname . ' ' . $lastname ?></p>
-    <p>Telefoonnummer: <?= $phonenumber ?></p>
-    <p>Email: <?= $mail ?></p>
-    <p>Datum: <?= $date ?></p>
-    <p>Tijd: <?= $reservation_time ?></p>
-    <p>Aantal personen: <?= $guests ?></p>
-    <p>Opmerking: <?= $comment ?></p>
+    <div class="info">
+        <h4>Naam:</h4>
+        <p><?= $firstname . ' ' . $lastname ?></p>
+        <h4>Telefoonnummer:</h4>
+        <p><?= $phonenumber ?></p>
+        <h4>Email:</h4>
+        <p><?= $mail ?></p>
+        <h4>Datum:</h4>
+        <p><?= $date ?></p>
+        <h4>Tijd:</h4>
+        <p><?= $reservation_time ?></p>
+        <h4>Aantal personen:</h4>
+        <p><?= $guests ?></p>
+        <h4>Opmerking:</h4>
+        <p><?= $comment ?></p>
+    </div>
     <button id="reservation_button"><a href="index.php">Home</a></button>
 </section>
 </body>

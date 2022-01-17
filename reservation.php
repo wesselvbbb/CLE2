@@ -55,6 +55,9 @@ if (isset($_POST['submit'])) {
 <?php if (isset($errors['db'])) { ?>
     <div><span class="errors"><?= $errors['db']; ?></span></div>
 <?php } ?>
+<header>
+    <h1>Reservering maken:</h1>
+</header><br>
     <section id="create">
         <h1>Maak uw reservering</h1>
         <form action="" method="post">

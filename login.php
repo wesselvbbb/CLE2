@@ -64,7 +64,7 @@ if (isset($_POST['submit'])) {
 <section>
 <?php if ($login) { ?>
     <p>Je bent ingelogd!</p>
-    <p><a href="index.php">Overzicht van reserveringen</a> / <a href="logout.php">Uitloggen</a> / <a href="secure.php">Naar secure page</a></p>
+    <p><a href="index.php">Overzicht van reserveringen</a> / <a href="logout.php">Uitloggen</a></p>
 <?php } else { ?>
     <form action="" method="post">
         <div>

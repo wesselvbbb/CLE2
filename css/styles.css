@@ -135,6 +135,7 @@ td#guestsfield {
 td#commentfield {
     overflow: hidden;
     max-width: 30px;
+    max-height: 1px;
     text-overflow: ellipsis;
 }
 
@@ -144,7 +145,7 @@ td#commentfield {
 
 header {
     background-color: #003F2F;
-    height: 200px;
+    height: 100px;
     color: white;
     width: 100%;
     display: flex;
@@ -194,4 +195,11 @@ button#reservation_button:hover {
 button#reservation_button:hover a {
     background-color: #8F6201;
     color: white
+}
+
+.info{
+    column-count: 1;
+    text-align: left;
+    max-width: 80%;
+    overflow: hidden;
 }

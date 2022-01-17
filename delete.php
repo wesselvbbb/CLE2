@@ -61,6 +61,9 @@ if (isset($_POST['submit'])) {
     <title>Delete - <?= $reservation['mail'] ?></title>
 </head>
 <body>
+<header>
+    <h1>Reservering verwijderen:</h1>
+</header><br>
 <section>
 <h2>Delete - <?= $reservation['mail'] ?></h2>
 <form action="" method="post">
