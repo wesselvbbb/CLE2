@@ -11,4 +11,3 @@ if (isset($_POST['submit'])){
     $guests = $_POST['total_guests'];
     $comment = $_POST['comment'];
 }
-

@@ -134,8 +134,7 @@ td#guestsfield {
 
 td#commentfield {
     overflow: hidden;
-    max-width: 30px;
-    max-height: 1px;
+    max-width: 150px;
     text-overflow: ellipsis;
 }
 

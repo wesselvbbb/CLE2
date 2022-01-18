@@ -1,16 +1,6 @@
 <?php
 require_once 'includes/initialize.php';
 
-//if (isset($_POST['submit'])){
-//    $firstname = $album['first_name'];
-//    $lastname = $_POST['last_name'];
-//    $phonenumber = $_POST['phone_number'];
-//    $mail = $_POST['mail'];
-//    $date = $_POST['date'];
-//    $guests = $_POST['total_guests'];
-//    $comment = $_POST['comment'];
-//}
-
 /** @var mysqli $db */
 
 
@@ -47,6 +37,7 @@ $date = $reservation['date'];
 $reservation_time = $reservation['reservation_time'];
 $guests = $reservation['total_guests'];
 $comment = $reservation['comment'];
+
 //Close connection
 mysqli_close($db);
 ?>
@@ -66,7 +57,8 @@ mysqli_close($db);
 <body>
 <header>
     <h1>Reservering maken:</h1>
-</header><br>
+</header>
+<br>
 <section id="overview">
     <h2>Overzicht van reservering:</h2>
     <div class="info">
