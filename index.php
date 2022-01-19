@@ -40,6 +40,7 @@ mysqli_close($db);
     <title>Home</title>
 </head>
 <body>
+
 <header>
     <h1>Overzicht reserveringen:</h1>
 </header>

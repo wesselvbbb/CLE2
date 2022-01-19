@@ -19,11 +19,11 @@ section#create {
 }
 
 /*Form styling*/
-input, label{
+input, label {
     display: block;
 }
 
-input[type=text], [type=tel],[type=number], [type=password] {
+input[type=text], [type=tel], [type=number], [type=password] {
     width: 50%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -45,7 +45,7 @@ input[type=date] {
     text-align: left;
 }
 
-#send{
+#send {
     background-color: #B98004;
     border: none;
     color: white;
@@ -55,20 +55,20 @@ input[type=date] {
     display: inline-block;
     font-size: 16px;
     border-radius: 5px;
-    display:      block;
-    margin-left:  auto;
+    display: block;
+    margin-left: auto;
     margin-right: 10px;
     float: right;
     cursor: pointer;
 }
 
-#send:hover{
+#send:hover {
     background-color: #8F6201;
     color: white;
     cursor: pointer;
 }
 
-#delete{
+#delete {
     background-color: red;
     border: none;
     color: white;
@@ -78,21 +78,21 @@ input[type=date] {
     display: inline-block;
     font-size: 16px;
     border-radius: 5px;
-    display:      block;
-    margin-left:  auto;
+    display: block;
+    margin-left: auto;
     margin-right: 10px;
     float: left;
     cursor: pointer;
     float: left;
 }
 
-#delete:hover{
+#delete:hover {
     background-color: darkred;
     float: left;
     cursor: pointer;
 }
 
-textarea{
+textarea {
     width: 50%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -103,11 +103,11 @@ textarea{
     text-align: left;
 }
 
-body{
+body {
     background-color: rgb(245, 245, 245);
 }
 
-table{
+table {
     width: 100%;
 }
 
@@ -115,6 +115,7 @@ tbody tr:nth-child(odd) {
     background-color: lightgray;
     width: 100%;
 }
+
 tfoot td {
     text-align: center;
     font-weight: bold;
@@ -138,7 +139,7 @@ td#commentfield {
     text-overflow: ellipsis;
 }
 
-.errors{
+.errors {
     color: red;
 }
 
@@ -153,7 +154,8 @@ header {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
 }
-section{
+
+section {
     background-color: rgb(255, 255, 255);
     padding: 20px;
     margin: 20px auto;
@@ -165,7 +167,7 @@ section{
     border-top: 3px solid #B98004;
 }
 
-button#reservation_button{
+button#reservation_button {
     background-color: #B98004;
     border: none;
     color: white;
@@ -175,12 +177,27 @@ button#reservation_button{
     display: inline-block;
     font-size: 16px;
     border-radius: 5px;
-    display:      block;
-    margin-left:  0;
+    display: block;
+    margin-left: 0;
     margin-right: auto;
 }
 
-button a{
+button#register {
+    background-color: cornflowerblue;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    display: block;
+    margin-left: 0;
+    margin-right: auto;
+}
+
+button a {
     color: white;
     text-decoration: none;
 }
@@ -196,7 +213,7 @@ button#reservation_button:hover a {
     color: white
 }
 
-.info{
+.info {
     column-count: 1;
     text-align: left;
     max-width: 80%;

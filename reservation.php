@@ -8,14 +8,14 @@ if (isset($_POST['submit'])) {
     require_once "includes/database.php";
 
     //Postback with the data showed to the user, first retrieve data from 'Super global'
-    $firstname   = mysqli_escape_string($db, $_POST['first_name']);
-    $lastname = mysqli_escape_string($db, $_POST['last_name']);
-    $phonenumber  = mysqli_escape_string($db, $_POST['phone_number']);
+    $firstname   = htmlentities(mysqli_escape_string($db, $_POST['first_name']));
+    $lastname = htmlentities(mysqli_escape_string($db, $_POST['last_name']));
+    $phonenumber  = htmlentities(mysqli_escape_string($db, $_POST['phone_number']));
     $mail   = mysqli_escape_string($db, $_POST['mail']);
-    $date = mysqli_escape_string($db, $_POST['date']);
-    $reservation_time = mysqli_escape_string($db, $_POST['reservation_time']);
-    $guests = mysqli_escape_string($db, $_POST['total_guests']);
-    $comment = mysqli_escape_string($db, $_POST['comment']);
+    $date = htmlentities(mysqli_escape_string($db, $_POST['date']));
+    $reservation_time = htmlentities(mysqli_escape_string($db, $_POST['reservation_time']));
+    $guests = htmlentities(mysqli_escape_string($db, $_POST['total_guests']));
+    $comment = htmlentities(mysqli_escape_string($db, $_POST['comment']));
 
     //Require the form validation handling
     require_once "includes/validation.php";

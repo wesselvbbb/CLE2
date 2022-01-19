@@ -67,20 +67,20 @@ if (isset($_POST['submit'])) {
     <p><a href="index.php">Overzicht van reserveringen</a> / <a href="logout.php">Uitloggen</a></p>
 <?php } else { ?>
     <form action="" method="post">
-        <div>
+
             <label for="email">Email</label>
             <input id="email" type="text" name="email" placeholder="Email..." value="<?= $email ?? '' ?>"/>
             <span class="errors"><?= $errors['email'] ?? '' ?></span>
-        </div>
-        <div>
+
+
             <label for="password">Wachtwoord</label>
             <input id="password" type="password" name="password" placeholder="Wachtwoord..."/>
             <span class="errors"><?= $errors['password'] ?? '' ?></span>
-        </div>
-        <div>
-            <p class="errors"><?= $errors['loginFailed'] ?? '' ?></p>
+
+            <p class="errors"><?= $errors['loginFailed'] ?? '' ?></p><br>
             <input type="submit" id="send" name="submit" value="Login"/>
-        </div>
+        <button id="register"><a href="register.php">Registreren</button>
+
     </form>
 <?php } ?>
 </section>
