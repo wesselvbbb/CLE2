@@ -15,8 +15,6 @@ if ($phonenumber == "") {
 if ($mail == "") {
     $errors['mail'] = 'Vul hier uw email in.';
 }
-
-// this error message wil overwrite the previous error when year is empty
 if ($date == "") {
     $errors['date'] = 'Datum mag niet leeg zijn.';
 }
@@ -27,10 +25,11 @@ if ($reservation_time == "") {
 if (!is_numeric($guests)) {
     $errors['total_guests'] = 'Voer een getal in.';
 }
+// User is not allowed to go over 20 guests limit
 if ($guests > 20) {
     $errors['total_guests'] = 'Aantal personen mag niet meer dan 20 zijn.';
 }
-// this error message wil overwrite the previous error when tracks is empty
+// this error message wil overwrite the previous error when guests is empty
 if ($guests == "") {
     $errors['total_guests'] = 'Aantal personen mag niet leeg zijn.';
 }

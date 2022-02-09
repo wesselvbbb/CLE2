@@ -4,17 +4,15 @@
 require_once "includes/database.php";
 
 if (isset($_POST['submit'])) {
-    // DELETE IMAGE
-    // To remove the image we need to query the file name from the db.
     // Get the record from the database result
-    $reservationId = mysqli_real_escape_string($db, $_POST['id']);
+    $reservationId = mysqli_escape_string($db, $_POST['id']);
     $query = "SELECT * FROM reservations WHERE id = '$reservationId'";
     $result = mysqli_query($db, $query) or die ('Error: ' . $query);
 
     $reservation = mysqli_fetch_assoc($result);
 
     // DELETE DATA
-    // Remove the album data from the database with the existing albumId
+    // Remove the reservation data from the database with the existing reservationId
     $query = "DELETE FROM reservations WHERE id = '$reservationId'";
     mysqli_query($db, $query) or die ('Error: ' . mysqli_error($db));
 

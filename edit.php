@@ -3,7 +3,7 @@
 session_start();
 
 if (!isset($_SESSION['loggedInUser'])) {
-    //Als gebruiker niet is ingelogd of niet de juiste rol heeft.
+    //Als gebruiker niet is ingelogd
     //Redirect naar login pagina
     header("Location: login.php");
     exit;
@@ -29,21 +29,30 @@ if (mysqli_num_rows($result) != 1) {
 
 if (isset($_GET['id']) && isset($_POST['update'])) {
     $reservationId = $_GET['id'];
-    $firstname = $_POST['first_name'];
-    $lastname = $_POST['last_name'];
-    $phonenumber = $_POST['phone_number'];
-    $mail = $_POST['mail'];
-    $date = $_POST['date'];
-    $reservation_time = $_POST['reservation_time'];
-    $guests = $_POST['total_guests'];
-    $comment = $_POST['comment'];
+    $firstname   = htmlentities(mysqli_escape_string($db, $_POST['first_name']));
+    $lastname = htmlentities(mysqli_escape_string($db, $_POST['last_name']));
+    $phonenumber  = htmlentities(mysqli_escape_string($db, $_POST['phone_number']));
+    $mail   = mysqli_escape_string($db, $_POST['mail']);
+    $date = htmlentities(mysqli_escape_string($db, $_POST['date']));
+    $reservation_time = htmlentities(mysqli_escape_string($db, $_POST['reservation_time']));
+    $guests = htmlentities(mysqli_escape_string($db, $_POST['total_guests']));
+    $comment = htmlentities(mysqli_escape_string($db, $_POST['comment']));
 
-//    Reservering wordt geupdate in de database door SQL Update Statement
-    mysqli_query($db, "UPDATE reservations SET first_name='$firstname', last_name='$lastname', phone_number='$phonenumber', 
+
+
+    require_once "includes/validation.php";
+
+    if (empty($errors)) {
+        //    Reservering wordt geupdate in de database door SQL Update Statement
+        mysqli_query($db, "UPDATE reservations SET first_name='$firstname', last_name='$lastname', phone_number='$phonenumber', 
                                 mail='$mail', date='$date', reservation_time='$reservation_time', total_guests='$guests', comment='$comment' WHERE id = $reservationId");
-    $_SESSION['message'] = "Reservering bijgewerkt!";
-//    Redirect gebruiker naar Home pagina
-    header('location: index.php');
+        $_SESSION['message'] = "Reservering bijgewerkt!";
+        //    Redirect gebruiker naar Home pagina
+        header('location: index.php');
+
+        //Close connection
+        mysqli_close($db);
+    }
 }
 
 $reservation = mysqli_fetch_assoc($result);
@@ -56,14 +65,6 @@ $reservation_time = $reservation['reservation_time'];
 $guests = $reservation['total_guests'];
 $comment = $reservation['comment'];
 
-// Valideer ingevoerde velden
-//  Als er errors zijn
-//        Toon gebruiker de juiste error(s) bij het verkeerd ingevoerde veld
-//  Als er geen errors zijn:
-//         Toon succesvol bericht
-
-//Close connection
-mysqli_close($db);
 
 //           Als gebruiker wel is ingelogd en de juiste rol heeft
 //                       Laat reserveringen zien
@@ -89,32 +90,35 @@ mysqli_close($db);
     <title>Bewerken</title>
 </head>
 <body>
+<?php if (isset($errors['db'])) { ?>
+    <div><span class="errors"><?= $errors['db']; ?></span></div>
+<?php } ?>
 <header>
     <h1>Reservering bewerken:</h1>
 </header><br>
 <section>
     <form action="" method="post">
         <label for="first_name">Voornaam:</label>
-        <input type="text" id="first_name" name="first_name"
-               value="<?= $firstname ?>"/>
+        <input type="text" id="first_name" name="first_name" placeholder="Voornaam..." value="<?= isset($firstname) ? htmlentities($firstname) : '' ?>"/>
+        <span class="errors"><?= $errors['first_name'] ?? '' ?></span><br>
         <label for="last_name">Achternaam:</label>
-        <input type="text" id="last_name" name="last_name"
-               value="<?= $lastname ?>"/>
-        <label for="phone_number">Telefoon:</label>
-        <input type="text" id="phone_number" name="phone_number"
-               value="<?= $phonenumber ?>"/>
-        <label for="mail">Email:</label>
-        <input type="text" id="mail" name="mail"
-               value="<?= $mail ?>"/>
+        <input type="text" id="last_name" name="last_name" placeholder="Achternaam..." value="<?= isset($lastname) ? htmlentities($lastname) : '' ?>" />
+        <span class="errors"><?= $errors['last_name'] ?? '' ?></span><br>
+        <label for="phone_number">Tel:</label>
+        <input id="phone_number" type="tel" name="phone_number" placeholder="Telefoon..." value="<?= isset($phonenumber) ? htmlentities($phonenumber) : '' ?>"/>
+        <span class="errors"><?= $errors['phone_number'] ?? '' ?></span><br>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="mail" placeholder="Email..." value="<?= isset($mail) ? htmlentities($mail) : '' ?>" />
+        <span class="errors"><?= $errors['mail'] ?? '' ?></span><br>
         <label for="date">Datum:</label>
-        <input type="date" id="date" name="date"
-               value="<?= $date ?>"/>
+        <input type="date" id="date" name="date" value="<?= isset($date) ? htmlentities($date) : '' ?>" />
+        <span class="errors"><?= $errors['date'] ?? '' ?></span><br>
         <label for="reservation_time">Tijd:</label>
-        <input type="text" id="reservation_time" name="reservation_time"
-               value="<?= $reservation_time ?>"/>
+        <input type="text" id="reservation_time" name="reservation_time" placeholder="Tijd..." value="<?= isset($reservation_time) ? htmlentities($reservation_time) : '' ?>" />
+        <span class="errors"><?= $errors['reservation_time'] ?? '' ?></span><br>
         <label for="total_guests">Aantal personen:</label>
-        <input type="number" id="total_guests" name="total_guests"
-               value="<?= $guests ?>"/>
+        <input type="number" id="total_guests" name="total_guests" placeholder="Aantal personen..." value="<?= isset($guests) ? htmlentities($guests) : '' ?>"  />
+        <span class="errors"><?= $errors['total_guests'] ?? '' ?></span><br>
         <label for="comment">Opmerking:</label>
         <input type="text" id="comment" name="comment"
                value="<?= $comment ?>"/><br>
