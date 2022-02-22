@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 17 jan 2022 om 12:50
+-- Gegenereerd op: 22 feb 2022 om 17:03
 -- Serverversie: 10.4.21-MariaDB
 -- PHP-versie: 8.0.12
 
@@ -44,13 +44,13 @@ CREATE TABLE `reservations` (
 --
 
 INSERT INTO `reservations` (`id`, `first_name`, `last_name`, `phone_number`, `mail`, `date`, `reservation_time`, `comment`, `total_guests`) VALUES
-(2, 'Kees', 'Smit', 617718234, 'keessmit@gmail.com', '2021-12-15', '', '', 0),
-(3, 'Mike', 'van de Berg', 617723458, 'mikevdb@hotmail.com', '2021-12-09', '', '', 0),
-(4, 'John', 'Deere', 687345821, 'johndeere@gmail.com', '2021-12-05', '', '', 0),
-(5, 'Johan', 'de Wit', 628729133, 'johandewit@hotmail.com', '2021-12-17', '', '', 0),
-(41, 'Wessel', 'van Beek', 618817922, 'wer@wer.nl', '2021-12-20', '18:00', 'wrsdhfgjtsdfg', 12),
-(53, 'Wessel', 'van Beek', 618817922, 'wessel.vanbeek@hotmail.com', '2022-01-14', '22:30', 'rewtasdfggdsfgsdf', 20),
-(55, 'testtest', 'van Beek', 618817922, 'wessel.vanbeek@hotmail.com', '2022-01-14', '22:30', 'rewtasdfggdsfgsdfihtugsfujdklllljfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff', 12);
+(60, 'Aarti ', 'Verwijmeren', 623775656, 'AartiVerwijmeren@dayrep.com', '2022-01-18', '22:30', 'Lorem ipsum dolor sit amet, ', 12),
+(61, 'Foeke ', 'van Hooijdonk', 663762109, 'FoekevanHooijdonk@jourrapide.com', '2022-01-19', '12:30', 'ik ben allergisch', 2),
+(67, 'test', 'test', 611111111, 'test@test.nl', '2022-01-19', '22:30', 'dsfadfg', 12),
+(68, 'test2', 'test2', 612345678, 'test2@test.test', '2022-01-26', '18:00', 'dsgfdsdsaf', 10),
+(73, 'testwsdfa', 'test', 618816243, 'test@test.nl', '2022-01-21', '18:00', 'ewr', 2),
+(74, 'test3', 'test3', 612345678, 'test3@test3.test3', '2022-01-20', '22:30', 'test3', 12),
+(76, 'tergertw', 'ter', 612345678, 'test@test.nl', '2022-01-20', '18:00', 'w', 1);
 
 -- --------------------------------------------------------
 
@@ -70,7 +70,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `email`, `password`) VALUES
 (1, 't@t.t', '$2y$10$4nP0Q.I9J7HD2aLNi9daKuDySSBsYCeF19k8XmDwg99LHV8XpyAtm'),
-(2, 'admin@admin.admin', '$2y$10$VZX.xWhz4r9THXdDlWCoTuQD9YoHsWOzbDn3Y95LGe7drx2FldIFK');
+(2, 'admin@admin.admin', '$2y$10$VZX.xWhz4r9THXdDlWCoTuQD9YoHsWOzbDn3Y95LGe7drx2FldIFK'),
+(3, 'test@test.test', '$2y$10$SbEyi4i7m1aCKDaqfefFleXkMSdVEe7oNRRF5ct7tyrKjOXXXn0Iy'),
+(4, 'test1@test.test', '$2y$10$l6F90/jRLqiqDDlvY.WOTeEm4zE6XPjEup5keugFucA5TrHb.1h0O');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -96,13 +98,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT voor een tabel `reservations`
 --
 ALTER TABLE `reservations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT voor een tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
